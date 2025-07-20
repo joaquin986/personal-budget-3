@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestor de Presupuesto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>💰 Gestor de Presupuesto Personal</h1>
+  
+  <form id="form-movimiento">
+    <input type="text" id="descripcion" placeholder="Descripción" required>
+    <input type="number" id="monto" placeholder="Monto" required>
+    <select id="tipo">
+      <option value="ingreso">Ingreso</option>
+      <option value="egreso">Egreso</option>
+    </select>
+    <button type="submit">Agregar</button>
+  </form>
+<!-- Botones extra -->
+<button onclick="exportarMovimientos()">Exportar a JSON</button>
+<button onclick="borrarMovimientos()">Borrar todo</button>
+<button onclick="guardarEnLocalStorage()">Guardar en localStorage</button>
+
+  <section id="resumen">
+    <p>Total Ingresos: <span id="total-ingresos">0</span></p>
+    <p>Total Egresos: <span id="total-egresos">0</span></p>
+    <p><strong>Saldo:</strong> <span id="saldo">0</span></p>
+  </section>
+
+  <ul id="lista-movimientos"></ul>
+
+  <script src="functional-utils.js"></script>
+  <script src="oop-objects.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
